@@ -7,7 +7,11 @@ import Logo from '@/assets/Logo';
 import { useSidebar } from '@/components/ui/sidebar';
 
 const Navbar: React.FC = () => {
-  const { toggle } = useSidebar();
+  const { setOpenMobile, state } = useSidebar();
+  
+  const toggleSidebar = () => {
+    setOpenMobile(prevState => !prevState);
+  };
   
   return (
     <nav className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
@@ -16,7 +20,7 @@ const Navbar: React.FC = () => {
           variant="ghost" 
           size="icon" 
           className="md:hidden" 
-          onClick={toggle}
+          onClick={toggleSidebar}
         >
           <Menu className="h-6 w-6" />
         </Button>

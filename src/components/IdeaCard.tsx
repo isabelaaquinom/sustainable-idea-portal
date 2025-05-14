@@ -13,17 +13,12 @@ export interface IdeaCardProps {
 
 const IdeaCard: React.FC<IdeaCardProps> = ({ id, title, summary, icon }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
 
   return (
     <div 
       className="h-64 perspective-[1000px] cursor-pointer mb-8" 
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
-      onClick={handleFlip}
     >
       <div 
         className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d ${
@@ -41,10 +36,10 @@ const IdeaCard: React.FC<IdeaCardProps> = ({ id, title, summary, icon }) => {
         
         {/* Back of card */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180">
-          <Card className="w-full h-full flex flex-col justify-between p-6 bg-white shadow-lg">
-            <div className="flex-1 flex flex-col justify-center">
-              <h3 className="text-lg font-bold text-eco-green mb-2 text-center">{title}</h3>
-              <p className="text-gray-600 text-sm text-center">{summary}</p>
+          <Card className="w-full h-full flex flex-col justify-between p-6 bg-white shadow-lg overflow-hidden">
+            <div className="flex-1 flex flex-col justify-center overflow-auto">
+              <h3 className="text-lg font-bold text-eco-green mb-2 text-center line-clamp-1">{title}</h3>
+              <p className="text-gray-600 text-sm text-center overflow-y-auto max-h-[120px] scrollbar-thin scrollbar-thumb-eco-green/20 scrollbar-track-transparent">{summary}</p>
             </div>
             <div className="mt-4 text-center">
               <Button asChild variant="outline" className="text-eco-green border-eco-green hover:bg-eco-green hover:text-white">

@@ -16,7 +16,8 @@ import {
 import { Home, BookOpen, Lightbulb, HelpCircle, Leaf, Wind, Sun } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
-  const { collapsed } = useSidebar();
+  const { state } = useSidebar();
+  const collapsed = state === "collapsed";
   const location = useLocation();
   const currentPath = location.pathname;
 
@@ -28,7 +29,9 @@ export const Sidebar: React.FC = () => {
 
   // Navigation link class generator
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "bg-sidebar-accent text-sidebar-primary-foreground font-medium" : "hover:bg-sidebar-accent/50";
+    isActive 
+      ? "bg-sidebar-accent text-white font-medium" 
+      : "text-white hover:bg-sidebar-accent/50";
 
   // Ideas submenu items
   const ideiaItems = [
@@ -45,12 +48,12 @@ export const Sidebar: React.FC = () => {
   return (
     <SidebarComponent
       className={`transition-all duration-300 ease-in-out h-screen ${collapsed ? "w-14" : "w-64"}`}
-      collapsible
+      collapsible="icon"
     >
       <SidebarTrigger className="m-2 self-end md:hidden" />
       
       <SidebarContent>
-        <SidebarGroup defaultOpen>
+        <SidebarGroup>
           <SidebarGroupLabel>Menu</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -75,7 +78,7 @@ export const Sidebar: React.FC = () => {
           </SidebarGroupContent>
         </SidebarGroup>
         
-        <SidebarGroup defaultOpen={ideasExpanded}>
+        <SidebarGroup>
           <SidebarGroupLabel>
             {!collapsed ? "Ideias Sustentáveis" : "Ideias"}
           </SidebarGroupLabel>

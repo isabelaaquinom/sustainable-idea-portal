@@ -11,7 +11,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <SidebarProvider collapsedWidth={56} defaultCollapsed={true}>
+    <SidebarProvider>
       <div className="flex min-h-screen w-full flex-col">
         <Navbar />
         

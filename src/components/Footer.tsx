@@ -8,17 +8,17 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0 pl-[255px] md:pl-0">
+          <div className="mb-4 md:mb-0 md:pl-0">
             <Logo />
           </div>
           
           <div className="text-center md:text-right text-gray-600">
             <div className="flex items-center justify-center md:justify-end gap-1 mb-2">
               <Copyright className="h-4 w-4" />
-              <span>2025 EcoFuturo - Todos os direitos reservados</span>
+              <span>2025 GreenLamp - Todos os direitos reservados</span>
             </div>
             <p className="text-sm">
-              Desenvolvido por: <span className="font-semibold">Equipe de Desenvolvimento</span>
+              Desenvolvido por: <span className="font-semibold">Grupo 3 - UPX 3</span>
             </p>
           </div>
         </div>

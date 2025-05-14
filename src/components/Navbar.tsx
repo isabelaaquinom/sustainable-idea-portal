@@ -10,12 +10,12 @@ const Navbar: React.FC = () => {
   const { setOpenMobile, state } = useSidebar();
   
   const toggleSidebar = () => {
-    setOpenMobile(!state.openMobile);
+    setOpenMobile(!state);
   };
   
   return (
-    <nav className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
-      <div className="flex items-center gap-4 pl-[255px] md:pl-0">
+    <nav className="bg-white shadow-md py-4 px-6 flex items-center justify-between ml-[255px]">
+      <div className="flex items-center gap-4 md:pl-0">
         <Button 
           variant="ghost" 
           size="icon" 

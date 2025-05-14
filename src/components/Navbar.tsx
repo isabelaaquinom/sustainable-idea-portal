@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   
   return (
     <nav className="bg-white shadow-md py-4 px-6 flex items-center justify-between">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 pl-[255px] md:pl-0">
         <Button 
           variant="ghost" 
           size="icon" 

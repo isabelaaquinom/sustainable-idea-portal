@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 pl-[255px] md:pl-0">
             <Logo />
           </div>
           

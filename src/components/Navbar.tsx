@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   const { setOpenMobile, state } = useSidebar();
   
   const toggleSidebar = () => {
-    setOpenMobile(prevState => !prevState);
+    setOpenMobile(!state.openMobile);
   };
   
   return (
